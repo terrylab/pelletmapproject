@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Michael Brawner">
+    <title>Pellet Map Project</title>
+
+    <link rel="stylesheet" href="font-awesome-4.2.0/css/font-awesome.min.css">
+
+
+  
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    
+
+     <!-- Bootstrap -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+   
+    
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <style>
+      
+      img.infowindow-images{
+        width: 400px;
+        height: auto;
+        margin-right: 12px
+      }
+
+      .infowindow{
+        width: 385px;
+        margin-left: 15px
+      }
+    </style>
+
+  
+    
+
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-inverse" role="navigation">
+      <div class="container">
+      <!-- Brand and toggle get grouped for better ßmobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">Home</a>
+        </div><!--.navbar-header-->
+
+         <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id=".navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="about-the-project.html">About the Project <span class="sr-only">(current)</span></a></li>
+            <li><a href="map.html">The Map</a></li>
+            <li><a href="links.html">Links</a></li>
+            <li><a href="support.html">Support Us</a></li>
+          </ul>
+          <ul class="nav navbar-nav pull-right">
+            <li><a href="links.html"><i class="fa fa-envelope-o"></i> Contact</a></li>
+          </ul>
+        </div><!--navbar-collapse-->
+      </div><!--container-->
+    </nav><!--navbar-->
+
+    <div class="container rocky">
+      <h2>The Map</h2>
+      <p>Click on a marker to learn about the species found at that location.</p>
+    
+
+    <!-- <input id="research sites" type="radio" name="locations" checked="checked"/><label for="research sites">Research Sites</label>
+<input id="schools" type="radio" name="locations"><label for="schools">Schools</label>
+<input id="both" type="radio" name="locations"><label for="both">Both</label>
+ -->
+    <div id="map"></div>
+    <script>
+      var map;
+     
+     
+      
+      
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: bounds,
+          zoom: 6,
+          maxZoom: 12, 
+          minZoom: 2
+        });
+        map.setMapTypeId('terrain');
+
+       
+
+
+        //Multiple Markers
+        var locations = [
+          ['Oregon State University', 44.567815, -123.277486, 'research sites', '<h1>Oregon State University</h1><img class="infowindow-images" src="images/Corvallis_7302.jpg" alt="..."><br><p><b>Habitat Characteristics</b><br><div class = "infowindow">Oregon State University is in Corvallis, Oregon, located within the central Willamette Valley. The campus contains many trees, grassy open lawns, as well as roads, buildings, and athletic fields. The campus is bordered by greenbelts and woodlands dominated by Oregon white oak (<em>Quercus garryana</em>) as well as suburban residential and urban areas. The heavily forested, conifer dominated foothills of the Oregon Coast Range lie nearby, several miles to the west.</div><br><br><b>Predator Species</b><br><div class = "infowindow"><a href="https://www.allaboutbirds.org/guide/Barn_Owl/id" target="_blank">Barn Owl (<em>Tyto alba</em>)</a></div><br><br><b>Prey Species</b><br><em><div class = "infowindow">In Process</em></div><br><br><b>Number of Pellets</b><br><div class = "infowindow">33</div><br><br><b>Number of Specimens</b><br><em><div class = "infowindow">In Process</em></div><br><br><b>Partner Scientists</b><br><div class="infowindow">Mary Roberts Elementary School, Ontario, Oregon</div><br></p>'],
+          ['Pueblo Valley', 42.093504, -118.573198, 'research sites', '<h1>Pueblo Valley</h1><img class="infowindow-images" src="images/Pueblo_Valley(2).jpg" alt="..."><br><p><b>Habitat Characteristics</b><br><div class = "infowindow">Located directly south of Steens Mountain, the Pueblo Mountains rise to 8634 feet, with Pueblo Mountain attaining the second highest point in southeastern Oregon. The vegetation in the Pueblo Mountains is dominated by big sagebrush (<em>Artemisia tridentata</em>) and desert grasses. Common grass species include Idaho fescue (<em>Festuca idahoensis</em>), bluebunch wheatgrass (<em>Pseudoroegneria spicata</em>), cheatgrass (<em>Bromus tectorum</em>), Thurber&#39;s needlegrass (<em>Achnatherum thurberianum</em>), mountain brome (<em>Bromus marginatus</em>), Sandberg&#39;s bluegrass (<em>Poa secunda</em>), and bottlebrush squirreltail (<em>Elymus elymoides</em>). Some high mountain meadows contain pockets of cottonwood, aspen, and willow. Pueblo Valley lies directly to the east of the range, containing low lands dominated by sagebrush-steppe and Tumtum Lake, a low elevation playa lake bed and salt desert shrub community.</div><br><br><b>Predator Species</b><br><div class = "infowindow"><a href ="https://www.allaboutbirds.org/guide/Great_Horned_Owl/id" target="blank">Great Horned Owl (<em>Bubo virginianus</em>)</a></div><br><br><b>Prey Species</b><br> <div class = "infowindow">Shrew (<em>Sorex sp.</em>)<br><a href="https://naturalhistory.si.edu/mna/image_info.cfm?species_id=137" target="_blank">Jackrabbit (<em>Lepus sp.</em>)</a><br><a href="https://naturalhistory.si.edu/mna/image_info.cfm?species_id=402" target="blank">Botta&apos;s Pocket Gopher (<em>Thomomys bottae</em>)</a><br><a href="https://naturalhistory.si.edu/mna/image_info.cfm?species_id=407" target="blank">Northern Pocket Gopher (<em>Thomomys talpoides</em>)</a><br>Pocket Gopher sp. (<em>Thomomys sp.</em>)<br><a href="https://naturalhistory.si.edu/mna/image_info.cfm?species_id=247" targer="blank">Great Basin Pocket Mouse (<em>Perognathus parvus</em>)</a><br><a href="https://naturalhistory.si.edu/mna/image_info.cfm?species_id=38" target="blank">Long-tailed Pocket Mouse (<em>Chaetodipus formosus</em>)</a><br><a href="https://naturalhistory.si.edu/mna/image_info.cfm?species_id=73" target="blank">Merriam&apos;s Kangaroo Rat (<em>Dipodomys merriami</em></a>)<br><a href="https://naturalhistory.si.edu/mna/image_info.cfm?species_id=84" target = "blank">Chisel-toothed Kangaroo Rat (<em>Dipodomys microps</em>)</a><br><a href="https://naturalhistory.si.edu/mna/image_info.cfm?species_id=76" target="blank">Ord&apos;s Kangaroo Rat (<em>Dipodomys ordii</em>)</a><br>Kangaroo Rat sp. (<em>Dipodomys sp.</em>)<br><a href="https://naturalhistory.si.edu/mna/image_info.cfm?species_id=292" target="blank">Western Harvest Mouse (<em>Reithrodontomys megalotis</em>)</a><br><a href="https://naturalhistory.si.edu/mna/image_info.cfm?species_id=266" target="blank">North American Deermouse (<em>Peromyscus maniculatus</em>)</a><br>Deermouse sp. (<em>Peromyscus sp.</em>)<br>Vole sp. (<em>Microtus sp.</em>)</div><br><br><b>Number of Pellets</b><br><div class = "infowindow">97</div><br><br><b>Number of Specimens</b><br><div class = "infowindow">577</div><br><br><b>Partner Scientists</b><br><div class="infowindow">Monroe Elementary School, Monroe, Oregon (75 student participants)<br><br>Willamina Elementary School, Willamina, Oregon (45 student participants)<br><br>Nyssa Elementary School, Nyssa, Oregon (28 student participants)<br><br>Siletz Valley Elementary School, Siletz, Oregon (20 student participants)<br><br>Evergreen Elementary School, Cave Junction, Oregon (30 student participants)<br><br>Ciloquin Elementary School, Ciloquin, Oregon (20 student participants)<br><br>Neil Armstrong Middle School, Forest Grove, Oregon (16 student participants)<br><br>Three Rivers Middle School, Sunriver, Oregon (15 student participants</div><br></p>'],
+          ['Smoke Creek Desert', 40.506364, -119.736945, 'research sites', '<h1>Smoke Creek Desert</h1><img class="infowindow-images" src="images/Smoke_Creek_Desert.jpg" alt="..."><br><p><b>Habitat Characteristics</b><br><div class = "infowindow">The Smoke Creek Desert is an arid region of northwestern Nevada, USA that lies about 60 miles (97 km) to the north of Pyramid Lake, west of the Fox Range and east of the Smoke Creek Mountains. Habitats in this location are similar to those located throughout the northern Great Basin. These habitats include sagebrush-steppe, cliffs, rocky outcrops of breccia and tufa with fallen boulders, and areas with patches of open ground between shrubs harboring native bunchgrasses, open sand and dunes, playa, and sulfurous artesian hot springs. Dominant vegetation includes big sagebush (<em>Artemisia tridentata</em>), cheatgrass (<em>Bromus tectorum</em>), greasewood (<em>Sarcobatus vermiculatus</em>), rabbitbrush (<em>Chrysothamnus viscidiflorus</em>), hopsage (<em>Greyia spinosa</em>), horsebrush (<em>Tetradymia spinosa</em>), and Torrey’s saltbush (<em>Atriplex torreyi</em>).</div><br><br><b>Predator Species</b><br><div class = "infowindow"><a href="https://www.allaboutbirds.org/guide/Barn_Owl/id" target="_blank">Barn Owl (<em>Tyto alba</em>)</a></div><br><br><b>Prey Species</b><br> <div class = "infowindow"><a href="https://naturalhistory.si.edu/mna/image_info.cfm?species_id=402" target="blank">Botta&apos;s Pocket Gopher (<em>Thomomys bottae</em>)</a><br><a href="https://naturalhistory.si.edu/mna/image_info.cfm?species_id=248" targer="blank>Little Pocket Mouse (<em>Perognathus longimembris</em>)</a><br><a href="https://naturalhistory.si.edu/mna/image_info.cfm?species_id=38" target="blank">Long-tailed Pocket Mouse (<em>Chaetodipus formosus</em>)</a><br><a href="https://naturalhistory.si.edu/mna/image_info.cfm?species_id=73" target="blank">Merriam&apos;s Kangaroo Rat (<em>Dipodomys merriami</em></a>)<br><a href="https://naturalhistory.si.edu/mna/image_info.cfm?species_id=84" target = "blank">Chisel-toothed Kangaroo Rat (<em>Dipodomys microps</em>)</a><br><a href="https://naturalhistory.si.edu/mna/image_info.cfm?species_id=76" target="blank">Ord&apos;s Kangaroo Rat (<em>Dipodomys ordii</em>)</a><br>Kangaroo Rat sp. (<em>Dipodomys sp.</em>)<br><a href="https://naturalhistory.si.edu/mna/image_info.cfm?species_id=292" target="blank">Western Harvest Mouse (<em>Reithrodontomys megalotis</em>)</a><br>Harvest Mouse sp. (<em>Reithrodontomys sp.</em>)<br><a href="https://naturalhistory.si.edu/mna/image_info.cfm?species_id=266" target="blank">North American Deermouse (<em>Peromyscus maniculatus</em>)</a><br>Deermouse sp. (<em>Peromyscus sp.</em>)<br><a href="https://naturalhistory.si.edu/mna/image_info.cfm?species_id=212" target="blank">Bushy-tailed Woodrat (<em>Neotoma cinerea</em>)</a><br><a href="https://naturalhistory.si.edu/mna/image_info.cfm?species_id=215" target="blank">Desert Woodrat (<em>Neotoma lepida</em>)</a><br>Vole sp. (<em>Microtus sp.</em>)<br><a href="https://naturalhistory.si.edu/mna/image_info.cfm?species_id=144" target="blank">Bobcat (<em>Lynx rufus</em>)</a></div><br><br><b>Number of Pellets</b><br><div class = "infowindow">24 plus ground sweepings</div><br><br><b>Number of Specimens</b><br><div class = "infowindow">284</div><br><br><b>Partner Scientists</b><br><div class="infowindow">Sand Ridge Charter School, Lebanon, Oregon (5th Grade, 40 student participants)<br><br>Oregon State University, Corvallis, Oregon (BI213 Principles of Biology Lab)</div><br></p>'],
+          ['Wapato Valley', 45.437003, -123.137034, 'schools', '<h1>Wapato Valley</h1><img class="infowindow-images" src="images/Wapato_Lake.JPG" alt="..."><br><p><b>Habitat Characteristics</b><br><div class = "infowindow">The Wapato Valley, nestled between the Chehalem Mountains to the east and the Oregon Coast Range to the south and west, lies along the Tualatin River near the town of Gaston, Oregon. Historically, this area harbored the large, shallow Wapato Lake, known for the tuberus wapato plant (<em>Sagittaria latifolia</em>) that was prized by Native Americans and waterfowl. Although current efforts to restore this wetland ecosystem have begun in recent years, the lake was long ago drained for agriculture, replaced with onion fields and fruit and walnut orchards.  Today, the valley is a mix of grass seed production, conventional and organic agriculture, wet meadows, bottomland forests, and remnant Oregon white oak (<em>Quercus garryana</em>) stands. Barn Owls (<em>Tyto alba</em>), Great Horned Owls (<em>Bubo virgianus</em>), and American Kestrels (<em>Falco sparverius</em>) are common here, returning annually to nest sites on local farms.</div><br><br><b>Predator Species</b><br><div class = "infowindow"><a href="https://www.allaboutbirds.org/guide/Barn_Owl/id" target="_blank">Barn Owl (<em>Tyto alba</em>)</a></div><br><br><b>Prey Species</b><br> <em><div class = "infowindow">In Process</em></div><br><br><b>Number of Pellets</b><br><div class = "infowindow">35</div><br><br><b>Number of Specimens</b><br><em><div class = "infowindow">In Process</em></div><br></p>'],
+          ['Woodland, Washington', 45.916702, -122.746747,'research sites', '<h1>Woodland, Washington</h1><img class="infowindow-images" src="images/Lewis_River(2).jpg" alt="..."><br><p><b>Habitat Characteristics</b><br><div class = "infowindow">Woodland, Washington is located on the Lewis River upstream from it’s junction with the Columbia River. A broad floodplain lies between the community and the Columbia River.</div><br><br><b>Predator Species</b><br><div class = "infowindow"><a href="https://www.allaboutbirds.org/guide/Barred_Owl/id" target="blank">Barred Owl (<em>Strix varia</em>)</a></div><br><br><b>Prey Species</b><br> <em><div class = "infowindow">In Process</em></div><br><br><b>Number of Pellets</b><br><div class = "infowindow">5</div><br><br><b>Number of Specimens</b><br><em><div class = "infowindow">In Process</em></div><br></p>']
+        ];
+          
+
+          
+
+          //Loop through our array of markers & place each one on the map  
+
+          var infowindow = new google.maps.InfoWindow({
+          });
+          var bounds = new google.maps.LatLngBounds();
+          var image = {
+              url: 'http://pelletmapproject.org/images/crow2 (1).png'
+                  // scaledSize: new google.maps.Size(80,80)
+            };
+
+          for(i = 0; i < locations.length; i++ ) {
+            // var locations = locations[i],
+                // visibility = i === 0;
+            marker = new google.maps.Marker({
+              position: new google.maps.LatLng(locations[i][1],locations[i][2]),
+              map: map,
+              title: locations[i][0],
+              contentString: locations[i][4],
+              icon: image
+              // visibility: visibility
+            });
+            // markers[locations[i][3]] = marker;
+
+             
+
+            bounds.extend(marker.position);
+
+            google.maps.event.addListener(marker, 'click', (function(marker, i) {
+                return function() {
+                  infowindow.setContent(locations[i][4]);
+                  infowindow.open(map, marker);
+                }
+              })(marker, i));
+            }
+            map.fitBounds(bounds);
+        }
+
+
+//         $('input[type=radio]').on('click', function(){
+//   var input_id = $(this).attr('id'); // ID - which we use to connect radio-btns and markers
+  
+//         if(typeof markers[input_id] !== 'undefined' || input_id === 'both'){
+//     for(key in markers){
+//       if(markers.hasOwnProperty(key) ){
+//               if( key === input_id || input_id === 'both') markers[key].setVisible(true);
+//               else  markers[key].setVisible(false);
+//       }
+//     }
+//   }
+// });
+       
+
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAxj8WXdmB_SX_ztZ0px6JchBZxUePmv50&callback=initMap"
+    async defer></script>
+    </div><!--rocky-->
+
+    <footer class="container">
+      <P class="pull-right"><a href="#">Back to top</a></p>
+    </footer>
+  </body>
+</html>
+
+
+
+
+

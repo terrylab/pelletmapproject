@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Michael Brawner">
+    <title>Pellet Map Project</title>
+
+    <link rel="stylesheet" href="font-awesome-4.2.0/css/font-awesome.min.css">
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+    
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-inverse" role="navigation">
+      <div class="container">
+      <!-- Brand and toggle get grouped for better ßmobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">Home</a>
+        </div><!--.navbar-header-->
+
+         <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id=".navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="about-the-project.html">About the Project <span class="sr-only">(current)</span></a></li>
+            <li><a href="map.html">The Map</a></li>
+            <li><a href="links.html">Links</a></li>
+            <li><a href="support.html">Support Us</a></li>
+          </ul>
+          <ul class="nav navbar-nav pull-right">
+            <li><a href="links.html"><i class="fa fa-envelope-o"></i> Contact</a></li>
+          </ul>
+        </div><!--navbar-collapse-->
+      </div><!--container-->
+    </nav><!--navbar-->
+
+
+
+    <div class="jumbotron container rocky">
+      <div class="dropdown pull-right">
+      </div>
+      <h1>Pellet Map Project</h1>
+      <p>Mapping small mammal distributions through their avian predators.</p>
+
+
+      <div class="row">
+        <div class="col-md-12">
+          <!--CAROUSEL-->
+          <div class="banner">
+            <div id="homepage-carousel" class="carousel" style=" margin: 0 auto" data-ride="carousel">
+              
+              <!-- Indicators -->
+              <ol class="carousel-indicators">
+                <li data-target="#homepage-carousel" data-slide-to="0" class="active"></li>
+                <li data-target="#homepage-carousel" data-slide-to="1"></li>
+                <li data-target="#homepage-carousel" data-slide-to="2"></li>
+                <li data-target="#homepage-carousel" data-slide-to="3"></li>
+              </ol>
+
+              <!-- Wrapper for slides -->
+              <div class="carousel-inner" role="listbox">
+                <div class="item active">
+                  <img src="images/PelletMap_banner01.png" alt="..." class="slide">
+                  <div class="carousel-caption">
+                    <h2></h2>
+                  </div>
+                </div>
+                <div class="item">
+                  <img src="images/great-horned-owl-1.png" alt="..." class="slide">
+                  <div class="carousel-caption">
+                    <h2></h2>
+                  </div>
+                </div>
+                <div class="item">
+                  <img src="images/Rick Eagan dt.common.streams.StreamServer.png" alt="..." class="slide">
+                  <div class="carousel-caption">
+                    <h2></h2>
+                  </div>
+                </div>
+                <div class="item">
+                  <img src="images/Barn-owl-flight.png" alt="..." class="slide">
+                  <div class="carousel-caption">
+                    <h2></h2>
+                  </div>
+                </div>
+              </div><!--.carousel-inner-->
+              
+              <!-- Controls -->
+              <a class="left carousel-control" href="#homepage-carousel" role="button" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="right carousel-control" href="#homepage-carousel" role="button" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+              </a>
+            </div><!--carousel-->
+          </div><!--banner-->
+        </div><!--col-md-8-->
+      </div><!--row-->
+
+      <div class="row">
+        <div class="col-md-4">
+          <h2 class="headings">What can we learn from raptor pellets?</h2>
+          <p class="lead">Avian predators such as owls, hawks, eagles, and falcons are major consumers of small mammals worldwide.  Raptors produce pellets - regurgitated hairballs packed with the indigestable hard parts of their small mammal meals, such as bones, claws, and teeth. These pellets can build up under avian roosts, providing a unique and under-appreciated window into the ecology of small mammals. The goal of Pellet Map Project is to produce a high-resolution dataset of small mammal distributions as viewed through the lens of their avian predators throughout the Western US. By putting the dead to work, we aim to reconstruct a holistic view of the small mammal community as sampled by natural processes.</p><br>
+          <img class="home-images" src="images/owl-pellet-in-sand.png" alt="..."></a>
+          <p><a class="btn btn-default btn-lg" href="about-the-project.html" role="button">Learn More</a></p>
+        </div><!--col-md-4-->
+        <div class="col-md-4">
+          <h2 class="headings">The Map</h2>
+          <a href="map.html"><img class ="home-images" id="home-map" src="images/interactive_map.jpg" alt="..."></a>
+          <p class="lead">In creating this unique online pellet database, part of our goal is to provide public access to the information within, as this project represents a citizen science collaboration with both pellet collectors and local Oregon school groups who are processing the samples and recording information on what bones of what species are found. To that end, we have created an interactive map that allows users to explore the data from a geographic standpoint. <b>Click on the map</b> above to see what we've learned.</p>
+        </div><!--col-md-4-->
+        <div class="col-md-4">
+          <h2 class="headings">Get Involved</h2>
+          <p class="lead">Pellet Map has teamed up with Oregon State University's <a href="http://smile.oregonstate.edu/">SMILE</a> Program in an effort to bring scientific research into the classroom. Learn more about our collaboration with SMILE and how you or your organization can get involved with this citizen science project.</p><br>
+          <h2 class="headings">Have pellets to send us?</h2>
+          <h3>Send to:</h3>
+          <address>
+            Terry Lab<br>
+            Department of Integrative Biology<br>
+            Oregon State University<br>
+            3029 Cordley Hall<br>
+            Corvallis, OR  97331<br>
+          </address>
+          <p><a class="btn btn-default btn-lg" href="Pellet_shipping_instructions.pdf" role="button">Click here for instructions</a></p><br>
+          
+            <h2 class="headings">Want to support citizen science?</h2>
+            <!-- <p>Learn how your donation can help support citizen science. <a href="support.html">Click here.</a></p> -->
+            <p><a class="btn btn-default btn-lg donate" href="support.html" role="button">Donate Here</a></p>
+         
+        </div><!--col-md-4-->
+      </div><!--row-->
+    </div><!--Jumbotron-->
+
+    <footer class="container">
+      <P class="pull-right"><a href="#">Back to top</p>
+    </footer><!--footer-->
+
+  
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>
