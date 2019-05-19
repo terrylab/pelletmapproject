@@ -1,0 +1,159 @@
+/*----------------------------------------------------------------------------- 
+=MAIN STYLES  
+-----------------------------------------------------------------------------*/
+body {
+	background: url('../images/tileable-stone-pavement-and-marble-textures-1.jpg');
+	background-attachment: fixed;
+}
+
+.navbar {
+	margin-bottom: 20px;
+}
+
+.jumbotron {
+	padding: 20px;	
+}
+
+.rocky {
+	background: url('../images/rockywall.png');
+	border-radius: 10px;
+	margin-bottom: 20px;
+	padding: 20px;
+}
+
+.banner {
+	margin-bottom: 20px;
+	border: 2px solid #000000;
+}
+
+.well {
+	height: 390px;
+	overflow: auto;
+	background: rgba(238,233,233,0.4);
+}
+
+.headlines {
+	text-decoration: underline;
+	background: rgb(241,242,210);
+	
+	text-align: center;
+	border-radius: 2px;
+}
+
+.media-heading {
+	margin-bottom: 10px;
+}
+
+.news-text {
+	margin-left: 10px;
+	margin-bottom: 20px
+}
+
+.home-images {
+	margin-bottom: 10px;
+	border-radius: 2px;
+	border: 2px solid #000000;
+}
+
+
+
+.donate {
+	color: #3366BB;
+}
+
+
+
+.btn {
+	background: rgba(238,233,233,0.4);
+}
+
+#map {
+	margin-top: 20px;
+	margin-bottom: 20px;
+	width: 100%;
+	height: 800px;
+	border-radius: 2px;
+	border: inset;
+}
+
+footer {
+	color: black;
+	
+}
+
+@media (min-width: 1600px) {
+  .container {
+    width: 1580px;
+}}
+@media (min-width: 1824px) {
+  .container {
+    width: 1800px;
+}}
+
+.about-header {
+	background: rgb(241,242,210);
+}
+
+.about-text {
+	font-size: 16px;
+	margin-left: 10px;
+}
+
+.about-list {
+	font-size: 20px;
+	font-style: bold;
+}
+
+.about-images{
+	border-radius: 2px;
+	margin-right: 15px;
+	margin-left: 15px;
+	margin-bottom: 	10px;
+	border: 2px solid #000000;
+
+}
+
+.caption {
+	font-size: 	12px;
+	margin-left: 15px;	
+}
+
+.float-right {
+	float: right;
+}
+
+#list-image {
+	margin-top: 15px;
+}
+
+#support-image {
+	margin-top: 30px;
+}
+
+#link-image {
+	margin-top: 60px;
+}
+
+#about-SMILE-students{
+	margin-left: 10px;
+}
+
+.about-images2{
+	border-radius: 2px;
+	margin-right: 15px;
+	margin-left: 10px;
+	margin-top: 10px;
+	border: 2px solid #000000;
+
+}
+
+img {
+    display: block;
+    height: 1440;
+    max-width: 100%;
+}
+
+
+
+
+
